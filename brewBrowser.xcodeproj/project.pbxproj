@@ -16,7 +16,6 @@
 		2E8566F728AF7B0800955D12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E8566F628AF7B0800955D12 /* Preview Assets.xcassets */; };
 		2E85670128AF7E2900955D12 /* BrewCaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85670028AF7E2900955D12 /* BrewCaskModel.swift */; };
 		2E85670328AF806600955D12 /* BrewCaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85670228AF806600955D12 /* BrewCaskViewModel.swift */; };
-		2EAE14EB28B361E60068758F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE14EA28B361E60068758F /* TestView.swift */; };
 		2EBE516528B00E160063AD39 /* CasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE516428B00E160063AD39 /* CasksView.swift */; };
 		2EBE516728B00E340063AD39 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE516628B00E340063AD39 /* StatView.swift */; };
 		2EBE516928B00E510063AD39 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE516828B00E510063AD39 /* AboutView.swift */; };
@@ -38,7 +37,6 @@
 		2E85670028AF7E2900955D12 /* BrewCaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewCaskModel.swift; sourceTree = "<group>"; };
 		2E85670228AF806600955D12 /* BrewCaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewCaskViewModel.swift; sourceTree = "<group>"; };
 		2EAE14E928B3612A0068758F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		2EAE14EA28B361E60068758F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		2EBE516428B00E160063AD39 /* CasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasksView.swift; sourceTree = "<group>"; };
 		2EBE516628B00E340063AD39 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		2EBE516828B00E510063AD39 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -111,13 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				2E8566F128AF7B0600955D12 /* ContentView.swift */,
+				2EBE516828B00E510063AD39 /* AboutView.swift */,
 				2EE8236C28B2236D00070CEF /* FormulaeView.swift */,
 				2EE8237228B2264300070CEF /* FormulaDetailsView.swift */,
 				2EBE516428B00E160063AD39 /* CasksView.swift */,
 				2E0BA74D28B0CDD100B3FDA7 /* CaskDetailsView.swift */,
 				2EBE516628B00E340063AD39 /* StatView.swift */,
-				2EBE516828B00E510063AD39 /* AboutView.swift */,
-				2EAE14EA28B361E60068758F /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,7 +205,6 @@
 				2E85670328AF806600955D12 /* BrewCaskViewModel.swift in Sources */,
 				2EE8237328B2264300070CEF /* FormulaDetailsView.swift in Sources */,
 				2E5C784F28AFD05E005FB5A0 /* BrewStatModel.swift in Sources */,
-				2EAE14EB28B361E60068758F /* TestView.swift in Sources */,
 				2EE8237128B2253200070CEF /* BrewFormulaViewModel.swift in Sources */,
 				2EBE516928B00E510063AD39 /* AboutView.swift in Sources */,
 				2E8566F228AF7B0600955D12 /* ContentView.swift in Sources */,

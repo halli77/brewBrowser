@@ -41,7 +41,7 @@ struct FormulaDetailsView: View {
                 
                 Section(header: Text("Homepage")) {
                     
-                        Link("\(formula.homepage)", destination: URL(string: "formula.homepage")!)
+                        Link("\(formula.homepage)", destination: URL(string: "\(formula.homepage)")!)
                   
 
                 }

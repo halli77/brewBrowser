@@ -45,7 +45,7 @@ struct CaskDetailsView: View {
                     if cask.homepage == "" {
                         myListItem(field: "Homepage", value: "-")
                     } else {
-                        Link("\(cask.homepage)", destination: URL(string: "cask.homepage")!)
+                        Link("\(cask.homepage)", destination: URL(string: "\(cask.homepage)")!)
                     }
 
                 }
