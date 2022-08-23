@@ -38,5 +38,5 @@ struct BrewStatModel: Codable, Identifiable {
 struct BrewStatItem: Codable, Identifiable {
     let number: Int
     let cask, count, percent: String
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
 }
