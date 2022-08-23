@@ -21,7 +21,7 @@ struct BrewStatModel: Codable, Identifiable {
     //let startDate, endDate: String
     //let totalCount: Int
     let items: [BrewStatItem]
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
     
 
     enum CodingKeys: String, CodingKey {
@@ -39,4 +39,11 @@ struct BrewStatItem: Codable, Identifiable {
     let number: Int
     let cask, count, percent: String
     var id: String = UUID().uuidString
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case number
+        case cask, count, percent
+    }
+    
 }

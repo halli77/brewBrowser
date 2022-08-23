@@ -9,10 +9,11 @@ import SwiftUI
 
 struct FormulaeView: View {
     
-    @StateObject var vm = BrewFormulaViewModel()
+    // @StateObject var vm = BrewFormulaViewModel()
+    @EnvironmentObject private var vm: BrewFormulaViewModel
     
-    @State var selectedModel: BrewFormulaModel? = nil
     @State var formulae: [BrewFormulaModel] = []
+    @State var selectedModel: BrewFormulaModel? = nil
     @State private var searchText = ""
     
     
@@ -39,12 +40,11 @@ struct FormulaeView: View {
             }
             .navigationTitle("Formulae")
             .listStyle(.plain)
+            .onAppear() {
+                formulae = vm.formulae                
+            }
             
         }
-        .onAppear() {
-            formulae = vm.formulae
-        }
-        
         .searchable(text: $searchText, placement: .automatic)
         .onChange(of: searchText) { newValue in
             if !newValue.isEmpty {
@@ -56,10 +56,13 @@ struct FormulaeView: View {
         }
 
     }
+        
+ 
 }
 
 struct FormulaeView_Previews: PreviewProvider {
     static var previews: some View {
         FormulaeView()
+            .environmentObject(BrewFormulaViewModel())
     }
 }

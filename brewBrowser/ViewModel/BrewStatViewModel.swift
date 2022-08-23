@@ -26,7 +26,7 @@ class BrewStatViewModel: ObservableObject {
   
     
     init() {
-        print("initalizing vm")
+        print("initalizing BrewStatViewModel")
         getStat(for: .monthly)
         getStat(for: .quaterly)
         getStat(for: .annually)
@@ -72,6 +72,7 @@ class BrewStatViewModel: ObservableObject {
         downloadData(from: url) { (returnedData) in
             if let data = returnedData {
                 print("DATA: \(data)")
+                print("from: \(url)")
                 do {
                     let newStat = try JSONDecoder().decode(BrewStatModel.self, from: data)
                     DispatchQueue.main.async { [weak self] in
@@ -84,9 +85,7 @@ class BrewStatViewModel: ObservableObject {
                         case .annually:
                             self?.stat365d = newStat
                         }
-                        
-                        print(newStat)
-                        print("done")
+
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -116,7 +115,7 @@ class BrewStatViewModel: ObservableObject {
     }
     
     func downloadData(from url: URL, completionHandler: @escaping (_ data: Data?) -> ()) {
-        print("Start downloadData")
+        print("Start downloadData from \(url)")
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
                 print("No data")
@@ -135,7 +134,7 @@ class BrewStatViewModel: ObservableObject {
                 return
             }
             
-            print("Download successful!")
+            print("Download successful from \(url)!")
             
             completionHandler(data)
         }.resume()

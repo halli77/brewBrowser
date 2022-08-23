@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct brewBrowserApp: App {
+    @StateObject private var formulaVm = BrewFormulaViewModel()
+    @StateObject private var caskVm = BrewCaskViewModel()
+    @StateObject private var statVm = BrewStatViewModel()
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-            //TestView()
+                .environmentObject(formulaVm)
+                .environmentObject(caskVm)
+                .environmentObject(statVm)
         }
     }
 }

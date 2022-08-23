@@ -100,9 +100,9 @@
 		2E8566FD28AF7DC800955D12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2EE8236E28B2242800070CEF /* BrewFormulaModel.swift */,
 				2E85670028AF7E2900955D12 /* BrewCaskModel.swift */,
 				2E5C784E28AFD05E005FB5A0 /* BrewStatModel.swift */,
-				2EE8236E28B2242800070CEF /* BrewFormulaModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,9 +125,9 @@
 		2E8566FF28AF7DF600955D12 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2EE8237028B2253200070CEF /* BrewFormulaViewModel.swift */,
 				2E85670228AF806600955D12 /* BrewCaskViewModel.swift */,
 				2E5C785028AFD0D3005FB5A0 /* BrewStatViewModel.swift */,
-				2EE8237028B2253200070CEF /* BrewFormulaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

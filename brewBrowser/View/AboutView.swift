@@ -8,31 +8,48 @@
 import SwiftUI
 
 struct AboutView: View {
+    
+    var text = """
+
+Homebrew ist "the missing package manager for macOS (or Linux)".
+
+With this app you can browse the repository of the current formulae and casks.
+
+Have fun!
+
+"""
+    
+    
     var body: some View {
         ZStack {
-            VStack {
-                Spacer()
-                Image("launchScreenImage")
-                    .resizable()
-                    .cornerRadius(20)
-                    .shadow(color: .gray, radius: 20, x: 0, y: 0.25)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 300)
-                    .scaledToFit()
-                    .padding()
-       
-                HStack {
+            ScrollView {
+                VStack (alignment: .leading) {
+                  
+                    Image("launchScreenImage")
+                        .resizable()
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 20, x: 0, y: 0.25)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 300)
+                        .scaledToFit()
+                        // .padding()
+           
+                    HStack {
+                        Text("It's all about")
+                        Link("brew.sh", destination: URL(string: "https://brew.sh/")!)
+                        Text(":-)")
+                    }
+                    .font(.title)
                     
-                    Text("It's all about")
-                    Link("brew.sh", destination: URL(string: "https://brew.sh/")!)
-                    Text(":-)")
+                    Text(text)
+                    
+                    Spacer()
+                    
                 }
-                .font(.title)
-                
-                Spacer()
+                .padding()
+                 
                 
             }
-            .padding()
             
             
             

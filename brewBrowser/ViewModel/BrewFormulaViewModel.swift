@@ -19,7 +19,7 @@ class BrewFormulaViewModel: ObservableObject {
     }
     
     
-    func getFilteredFormulae(searchText: String) -> [BrewFormulaModel] {
+    func getFilteredFormulae(searchText: String) -> [BrewFormulaModel]   {
         let filtered = formulae.filter { formula in
             formula.searchString.contains(searchText.lowercased())
         }
@@ -40,12 +40,11 @@ class BrewFormulaViewModel: ObservableObject {
         downloadData(from: url) { (returnedData) in
             if let data = returnedData {
                 print("DATA: \(data)")
+                print("from: \(url)")
                 do {
                     let newFormulae = try JSONDecoder().decode([BrewFormulaModel].self, from: data)
                     DispatchQueue.main.async { [weak self] in
                         self?.formulae  = newFormulae
-                        // print(newFormulae)
-                        print("finished downloading formulae")
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -75,7 +74,7 @@ class BrewFormulaViewModel: ObservableObject {
     }
     
     func downloadData(from url: URL, completionHandler: @escaping (_ data: Data?) -> ()) {
-        print("Start downloadData")
+        print("Start downloadData from \(url)")
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
                 print("No data")
@@ -94,7 +93,7 @@ class BrewFormulaViewModel: ObservableObject {
                 return
             }
             
-            print("Download successful!")
+            print("Download successful from \(url)!")
             
             completionHandler(data)
         }.resume()

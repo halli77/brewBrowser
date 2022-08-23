@@ -9,7 +9,8 @@ import SwiftUI
 
 struct StatView: View {
     
-    @StateObject var vm = BrewStatViewModel()
+    // @StateObject var vm = BrewStatViewModel()
+    @EnvironmentObject private var vm: BrewStatViewModel
     @State var selectedStatType: StatTypes = .monthly
     
  
@@ -56,5 +57,6 @@ struct StatView: View {
 struct StatView_Previews: PreviewProvider {
     static var previews: some View {
         StatView()
+            .environmentObject(BrewStatViewModel())
     }
 }

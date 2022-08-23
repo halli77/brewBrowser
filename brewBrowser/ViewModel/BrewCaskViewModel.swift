@@ -14,7 +14,7 @@ class BrewCaskViewModel: ObservableObject {
     
     
     init() {
-        print("initalizing vm")
+        print("initalizing BrewCaskViewModel")
         getCasks()
     }
     
@@ -36,14 +36,13 @@ class BrewCaskViewModel: ObservableObject {
         
     
         downloadData(from: url) { (returnedData) in
-            if let data = returnedData {
+            if let data = returnedData { 
                 print("DATA: \(data)")
+                print("from: \(url)")
                 do {
                     let newCasks = try JSONDecoder().decode([BrewCaskModel].self, from: data)
                     DispatchQueue.main.async { [weak self] in
-                        self?.casks = newCasks
-                        print(newCasks)
-                        print("done")
+                        self?.casks = newCasks 
                     }
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
@@ -73,7 +72,7 @@ class BrewCaskViewModel: ObservableObject {
     }
     
     func downloadData(from url: URL, completionHandler: @escaping (_ data: Data?) -> ()) {
-        print("Start downloadData")
+        print("Start downloadData from \(url)")
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
                 print("No data")
@@ -92,7 +91,7 @@ class BrewCaskViewModel: ObservableObject {
                 return
             }
             
-            print("Download successful!")
+            print("Download successful from \(url)!")
             
             completionHandler(data)
         }.resume()

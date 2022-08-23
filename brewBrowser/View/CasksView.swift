@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CasksView: View  {
     
-    @StateObject var vm = BrewCaskViewModel()
+    //@StateObject var vm = BrewCaskViewModel()
+    @EnvironmentObject private var vm: BrewCaskViewModel
+    
     @State var casks: [BrewCaskModel] = []
     @State var selectedModel: BrewCaskModel? = nil
     @State private var searchText = ""
@@ -67,6 +69,7 @@ struct CasksView: View  {
 struct CaskView_Previews: PreviewProvider {
     static var previews: some View {
         CasksView()
+            .environmentObject(BrewCaskViewModel())
     }
 }
 
