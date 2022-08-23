@@ -1,0 +1,12 @@
+## xcode
+xcuserdata/
+*~.nib
+DerivedData/
+build/
+
+## macOS
+.DS_Store
+.Trashes
+*.swp
+*.lock
+
